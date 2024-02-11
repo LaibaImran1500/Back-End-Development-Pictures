@@ -8,18 +8,18 @@ def test_health(client):
 def test_count(client):
     res = client.get("/count")
     assert res.status_code == 200
-    assert res.json['length'] == 10
+    assert res.json['length'] == 11
 
 
 def test_data_contains_10_pictures(client):
     res = client.get("/picture")
-    assert len(res.json) == 10
+    assert len(res.json) == 11
 
 
 def test_get_picture(client):
     res = client.get("/picture")
     assert res.status_code == 200
-    assert len(res.json) == 10
+    assert len(res.json) == 11
 
 
 def test_get_pictures_check_content_type_equals_json(client):
